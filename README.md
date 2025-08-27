@@ -8,6 +8,9 @@ Grade Next is a new revised version of Grade.
 
 Grade is an app that allows users to store and predict their grades and score results. It uses the standard weighted average to calculate the end grade.
 
+## Screenshots
+
+We currently don't have any usable screenshots. If you want to help please consider providing some example screenshots from Phones, Tablets and Desktops.
 
 ## Releases
 
