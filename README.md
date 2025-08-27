@@ -1,6 +1,26 @@
-# Tauri + Angular
+<p align="center">
+  <img src="https://github.com/mobilex1122/grade-next/blob/master/.github-assets/logo.png?raw=true" alt="Sublime's custom image" width=300/>
+</p>
 
-This template should help get you started developing with Tauri and Angular.
+# Grade Next
+
+Grade Next is a new revised version of Grade.
+
+Grade is an app that allows users to store and predict their grades and score results. It uses the standard weighted average to calculate the end grade.
+
+
+## Releases
+
+### Android
+- ~~Google Play~~ (Soon)
+- [Apk (Github)](https://github.com/mobilex1122/grade-next/releases)
+
+## Linux
+- [Appimage (Recommended)](https://github.com/mobilex1122/grade-next/releases)
+- [Debian](https://github.com/mobilex1122/grade-next/releases)
+
+## Windows
+Soon™
 
 ## Recommended IDE Setup
 
