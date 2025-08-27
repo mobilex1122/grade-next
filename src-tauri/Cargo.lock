@@ -1466,8 +1466,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "grades-next"
-version = "0.1.0"
+name = "grade-next"
+version = "0.0.1"
 dependencies = [
  "serde",
  "serde_json",
