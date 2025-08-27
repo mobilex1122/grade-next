@@ -15,6 +15,11 @@
 
 .sub-name {
     font: var(--mat-sys-headline-medium);
+    overflow: hidden;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .sub-grade {
