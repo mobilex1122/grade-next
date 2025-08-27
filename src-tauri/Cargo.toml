@@ -1,6 +1,6 @@
 [package]
 name = "grade-next"
-version = "0.0.1"
+version = "0.0.3"
 description = "A Tauri App"
 authors = ["Jan Palma"]
 edition = "2021"
