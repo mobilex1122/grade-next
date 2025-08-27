@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+html {
+  color-scheme: light dark;
+  @include mat.theme((
+    color: mat.$green-palette,
+    typography: Roboto,
+    density: 0
+  ));
+
+  --jp-error-container: light-dark(#a83939,#962020);
+  --jp-on-error-container: light-dark(#ffffff,#ffffff);
+
+
+  --jp-success-container: light-dark(#358035,#219621);
+  --jp-on-success-container: light-dark(#ffffff,#ffffff);
+}
+html, body { height: 100%; margin: 0; }
+
+
+
+* {
+  user-select: none;
+}
+
+.stack-error {
+  @include mat.snack-bar-overrides((
+    container-color: var(--jp-error-container),
+    supporting-text-color: var(--jp-on-error-container),
+  ));
+}
+
+.stack-success {
+  @include mat.snack-bar-overrides((
+    container-color: var(--jp-success-container),
+    supporting-text-color: var(--jp-on-success-container),
+  ));
+}
+
+
+.fullscreen-dialog {
+  @include mat.dialog-overrides((
+    container-max-width: 100%,
+    container-min-width: 100%,
+    container-shape: 0
+  ));
+}
+
+mat-toolbar {
+  gap: 0.5rem;
+}

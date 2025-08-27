@@ -1,0 +1,50 @@
+<mat-stepper [linear]="false" headerPosition="top" #stepper style="margin-inline:auto; max-width: 75rem; padding: 1rem; height: 100%">
+  <mat-step >
+    <h1>Welcome!</h1>
+
+    <p>
+        Welcome to Grade Next. This app will allow you to quickly predict and store your Grades/Score.
+    </p>
+
+    <div>
+        <button matButton matStepperNext>Next</button>
+    </div>
+  </mat-step>
+
+  <mat-step >
+    <h1>Grades and Weights</h1>
+
+    <p>
+        This app uses Weighted Avarage to calculate grades. If you don't need weighted grades just ignore the weight value (by default on <code>1</code>).
+    </p>
+
+    <div>
+        <button matButton matStepperPrevious>Previus</button>
+
+        <button matButton matStepperNext>Next</button>
+    </div>
+  </mat-step>
+
+  <mat-step >
+    <h1>Subject</h1>
+
+    <p>
+        Grades are separated into Subjects. You can create subject by clicking the "Add Subject" button in the bottom right corner.
+    </p>
+
+    <div>
+        <button matButton matStepperPrevious>Previus</button>
+
+        <button matButton matStepperNext>Next</button>
+    </div>
+  </mat-step>
+
+  <mat-step >
+    <h1>Let's Start!</h1>
+
+    <div>
+        <button matButton matStepperPrevious>Previus</button>
+        <button matButton (click)="done()">Done</button>
+    </div>
+  </mat-step>
+</mat-stepper>

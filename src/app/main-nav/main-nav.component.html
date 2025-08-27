@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [class.large]="(isHandset$ | async) === false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <div style="display: flex; flex-direction:column; gap: 0.5rem; height: 100%">
+      <div class="hero">
+        <span class="hero-grade">Grade</span><br>
+        <span class="hero-next">Next</span>
+      </div>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home" routerLinkActive="current">
+          <mat-icon matListItemIcon>home</mat-icon>
+          Home
+        </a>
+        
+        <a mat-list-item routerLink="/about" routerLinkActive="current">
+          <mat-icon matListItemIcon>info</mat-icon>
+          About
+        </a>
+      </mat-nav-list>
+      <div style="flex-grow:1;"></div>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/settings" routerLinkActive="current">
+          <mat-icon matListItemIcon>settings</mat-icon>
+          Settings
+        </a>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="content" [class.open]="drawer.opened" [class.large]="(isHandset$ | async) === false">
+    <mat-toolbar class="main-bar" style="gap: 0.5rem;" [class.open]="drawer.opened" [class.large]="(isHandset$ | async) === false">
+      @if (isHandset$ | async) {
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          matIconButton
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+      <span>{{state.getTitle()}}</span>
+    </mat-toolbar>
+    <div style="padding: 1rem; overflow-y:auto;flex-grow:1">
+      <ng-content></ng-content>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,120 @@
+@use '@angular/material' as mat;
+
+.content {
+    overflow-y: auto;
+    padding: 1rem;
+}
+.main {
+    display: flex;
+    gap: 1rem;
+    height: 15rem;
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+    align-items: stretch;
+}
+
+.sub {
+    height: 100%;
+}
+.sub-name {
+    font: var(--mat-sys-body-large);
+    font-weight: bold;
+    overflow: hidden;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.sub-grade {
+    
+    font: var(--mat-sys-headline-medium);
+}
+
+.sub-weight {
+    font: var(--mat-sys-body-large);
+}
+
+
+.main .sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font: var(--mat-sys-display-large);
+
+    background: var(--mat-sys-primary);
+    color: var(--mat-sys-on-primary);
+    border-radius: var(--mat-sys-corner-extra-large);
+    flex-grow: 2;
+    height: 100%;
+}
+mat-expansion-panel {
+    border: solid 2px var(--mat-sys-outline);
+    width: 100%;
+    @include mat.expansion-overrides((
+        container-elevation-shadow: #00000000,
+        container-background-color: var(--mat-sys-surface-container-lowest),
+        container-shape: var(--mat-sys-corner-extra-large)
+    ));
+}
+.grid {
+    display: flex;
+}
+
+
+.grades {
+    margin-top: 1rem;
+    display: grid;
+    overflow-x:hidden;
+    grid-template-columns: repeat(4,1fr);
+    gap: 0.5rem;
+}
+
+@media screen and (max-width: 1600px) {
+    .grades {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .grades {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .grades {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+
+@media screen and (max-width: 60rem) {
+    .main {
+        flex-direction: column;
+        height: 20rem;
+    }
+    mat-expansion-panel {
+        width: 100%;
+        
+    }
+    .addgrade {
+        flex-direction: column;
+    }
+    .addgrade .counters {
+        flex-direction: column;
+    }
+
+    .addgrade .numberInput {
+        flex-grow: 1;
+    }
+
+    .confirm button {
+        height: 4rem;
+        width: 100%;
+    }
+
+}

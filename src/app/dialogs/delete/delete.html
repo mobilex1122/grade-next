@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Delete {{data.value}}?</h2>
+<mat-dialog-content>
+  Are you sure you want to delete {{data.value}}?
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button matButton (click)="onNoClick()">No</button>
+  <button matButton (click)="onDone()">Yes</button>
+</mat-dialog-actions>

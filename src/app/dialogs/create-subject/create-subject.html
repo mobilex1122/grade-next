@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Create Subject</h2>
+<mat-dialog-content>
+  <mat-form-field style="margin-top: 0.5rem; width: 100%" appearance="outline">
+    <mat-label>Subject Name</mat-label>
+    <input matInput [(ngModel)]="value" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button matButton (click)="onNoClick()">Cancel</button>
+  <button matButton (click)="onDone()">Create</button>
+</mat-dialog-actions>

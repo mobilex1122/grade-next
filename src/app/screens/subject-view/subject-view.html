@@ -1,0 +1,39 @@
+<mat-toolbar style="flex-shrink: 0;">
+    <button matIconButton (click)="dialogRef.close()">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>{{name}}</span>
+</mat-toolbar>
+<div class="content">
+    <div class="main" style="">
+        <div class="sub">
+            <span>{{ name }}</span>
+        </div>
+        <div class="sub" style="background: none; display:flex; flex-direction:column; gap:1rem; flex-grow:1;">
+            <div class="sub" style=" height:auto; min-height: 6rem; width: 100%; background: var(--mat-sys-secondary); color: var(--mat-sys-on-secondary); flex-grow: 1;">
+                <span>{{ average ?? 0 | number:'1.2-2'}}</span>
+            </div>
+            <button matButton="filled" (click)="addGrade()" style="width: 100%;">
+                <mat-icon>add</mat-icon>
+                Add Grade/s
+            </button>
+        </div>
+    </div>
+
+    <div class="grades">
+        @for (grade of grades; track $index) {
+            <app-advanced-list-item
+                (onButtonClick)="selectGrade(grade,$event)"
+                [iconButtons]="gradeButtons"
+            >
+                <div style="display: flex; flex-direction:column; align-items:stretch; min-width: 0; max-width:100%; gap: 0.5rem">
+                    <span class="sub-name">{{grade.name ?? 'Grade'}}</span>
+                    <div>
+                        <span class="sub-grade">{{grade.grade| number: '1.1-1'}}/</span>
+                        <span class="sub-weight">{{grade.weight| number: '1.1-1'}}</span>
+                    </div>
+                </div>
+            </app-advanced-list-item>
+        }
+    </div>
+</div>

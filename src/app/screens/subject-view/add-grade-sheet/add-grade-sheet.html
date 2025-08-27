@@ -1,0 +1,64 @@
+
+<div class="addgrade">
+    
+    <span class="title">{{ this.editMode ? "Edit Grade" : "Add Grade" }}</span>
+
+    <div class="name">
+        <mat-form-field appearance="outline" class="example-full-width" style="width: 100%; margin-bottom: -16px">
+            <mat-label>Name (Optional)</mat-label>
+            <input matInput placeholder="Homework" [(ngModel)]="name">
+        </mat-form-field>
+    </div>
+    <div class="counters">
+        <div class="numberInput main-grade">
+
+                <button matIconButton (click)="modifyGrade(-incrementValue)">
+                    <mat-icon>remove</mat-icon>
+                </button>
+
+                <div class="center">
+                    <span class="label">Grade</span>
+
+                    <input (change)="gradeInput($event)" class="number" value="{{grade | number : '1.1-1'}}">
+                    <span class="number"></span>
+                </div>
+
+                <button matIconButton (click)="modifyGrade(incrementValue)">
+                    <mat-icon>add</mat-icon>
+                </button>
+        </div>
+        <div class="numberInput weight">
+
+            <button matIconButton (click)="modifyWeight(-incrementValue)">
+                <mat-icon>remove</mat-icon>
+            </button>
+
+            <div class="center">
+                <span class="label">Weight</span>
+                <input (change)="weightInput($event)" class="number" value="{{weight | number : '1.1-1'}}">
+            </div>
+            <button matIconButton (click)="modifyWeight(+incrementValue)">
+                <mat-icon>add</mat-icon>
+            </button>
+
+        </div>
+    </div>
+    <div style=" background: #7c7c7c80; height: 1px; margin-inline:1rem"></div>
+    <div class="action">
+        @if (this.editMode) {
+            <button matButton="filled" (click)="addGrade()">
+                <mat-icon>edit</mat-icon>
+                Done
+            </button>
+        } @else {
+            <button matButton="filled" (click)="addGrade()">
+                <mat-icon>add</mat-icon>
+                Add
+            </button>
+        }
+        <button matButton="outlined" (click)="close()">
+            <mat-icon>close</mat-icon>
+            Close
+        </button>
+    </div>
+</div>

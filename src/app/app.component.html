@@ -1,0 +1,14 @@
+@if (storage.ready && !loading) {
+    <div  class="main" >
+    <app-main-nav>
+        <router-outlet>
+
+        </router-outlet>
+    </app-main-nav>
+    </div>
+} @else {
+    <div class="mainLoading">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+}
+

@@ -1,0 +1,24 @@
+
+<div class="sum">
+
+    <span class="mainsum">{{globalavrage| number : '1.1-1'}}</span>
+    <span>Average Grade</span>
+</div>
+<div class="subjects">
+@for (s of subjects.sort(bybest); track s.id) {
+
+   <app-advanced-list-item
+        [leftText]="s.subject"
+        [rightText]="(s.average ?? 0 | number : '1.1-1') ?? '0'"
+        (onClick)="onClick(s.id)"
+        (onHold)="onHold(s.id,s.subject)"
+    >   
+        <div style="display: flex; justify-content:space-between; align-items:center;">
+            <span class="sub-name">{{s.subject}}</span>
+            <span class="sub-grade">{{s.average ?? 0 | number : '1.1-1'}}</span>
+        </div>
+    </app-advanced-list-item>
+}
+</div>
+
+<app-create-subject-button></app-create-subject-button>

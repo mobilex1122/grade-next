@@ -1,0 +1,18 @@
+<span class="name">{{data.name}}</span>
+<div class="menu">
+    <button matButton="filled" (click)="open($event)">
+        <mat-icon>launche</mat-icon>
+        <span>Open</span>
+    </button>
+
+    <button matButton="filled" class="sec" (click)="rename($event)">
+        <mat-icon>edit</mat-icon>
+        <span>Rename</span>
+    </button>
+
+    <button matButton="filled"  class="warn" (click)="delete($event)">
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+    </button>
+
+</div>

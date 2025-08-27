@@ -1,0 +1,23 @@
+ <button
+    class="subject"
+    matRipple
+    [matRippleAnimation]="{enterDuration: 800,exitDuration: 500}" 
+    (pointerdown)="startTimer()"
+    (pointerup)="stopTimer()" 
+    (pointerleave)="cancelTimer()">
+    <div style="flex-grow: 1; flex-shrink:1; min-width:0;">
+        <ng-content>Placeholder</ng-content>
+    </div>
+    @for (button of iconButtons; track $index) {
+        <button matIconButton (click)="onButtonEvent.emit(button.id)"><mat-icon>{{button.icon}}</mat-icon></button>
+    }
+
+    @if (menuItems.length > 0) {
+        <button matIconButton [matMenuTriggerFor]="menu">menu</button>
+    }
+</button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
